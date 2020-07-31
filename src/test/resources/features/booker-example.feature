@@ -1,3 +1,4 @@
+@run
 Feature: Booker-example Feature
 
   Scenario: Booking - GetBookingIds
@@ -5,7 +6,7 @@ Feature: Booker-example Feature
     Then  user gets status code "200"
     And   the amount of Booking Ids is "10"
 
-  @run
+
   Scenario: Booking - CreateBooking
     When  the user requests booking with following data:
       | firstname                 | Mike       |
@@ -50,7 +51,7 @@ Feature: Booker-example Feature
         | checkin  | 2020-05-13 |
         | checkout | 2020-05-15 |
 
-  @run
+
   Scenario: Booking - UpdateBooking
     Given the user requests token with username "admin" and password "password123"
     When  the user requests booking with following data:
@@ -81,7 +82,7 @@ Feature: Booker-example Feature
     And   the path "bookingdates" contains the following values:
       | checkin  | 2020-05-13 |
       | checkout | 2020-05-20 |
-  @run
+
   Scenario: Booking - UpdateBooking - Negative
     Given the user requests token with username "admin" and password "password123"
     When  the user requests booking with following data:
@@ -98,7 +99,7 @@ Feature: Booker-example Feature
       | bookingdates --> checkin  | 2020-05-13 |
       | bookingdates --> checkout | 2020-05-20 |
 
-    @run
+
   Scenario: Booking - PartialUpdateBooking
     Given the user requests token with username "admin" and password "password123"
     When  the user requests booking with following data:
